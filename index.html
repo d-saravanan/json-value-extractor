@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Json Value Extractor</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Json Value Extractor</h1>
+        <p>
+          This tool can be used to extract the values from JSON using the
+          provided path.
+          <strong>This tool does not work in array values in properties</strong>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <div class="form-group">
+            <label for="jsonexpr">Provide the JSON content below</label>
+            <textarea
+              rows="10"
+              cols="110"
+              id="jsontxt"
+              placeholder="Enter the input as a JSON"
+            >
+[
+            {
+              "user": {
+                "address": {
+                  "zip": 123
+                }
+              }
+            },
+          {
+              "user": {
+                "address": {
+                  "zip": 456
+                }
+              }
+            }
+          ]</textarea
+            >
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="jsonexpr">Provide the JSON Property Path</label>
+            <input
+              type="textbox"
+              id="jsonexpr"
+              class="form-control"
+              placeholder="property path (ex: user>address>zip)"
+              value="user>address>zip"
+            />
+          </div>
+
+          <button
+            class="btn btn-success"
+            id="extractor"
+            onclick="extractpropertyvalues()"
+          >
+            Extract
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <h3>The results obtained by parsing are given below</h3>
+        <div class="alert alert-info">
+          <div id="result" class="text-center text-success"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    ​
+    <script src="./app.js" type="text/javascript"></script>
+  </body>
+</html>
